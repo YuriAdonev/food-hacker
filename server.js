@@ -7,6 +7,10 @@ const app = express();
 
 app.use(bodyParser.json());
 
+app.get('/', (req, res) => {
+  res.send('index.html')
+});
+
 mongoose.connect(db)
   .then(() => console.log(`MongoDB Connected...`))
   .catch(err => console.log(err));
